@@ -22,7 +22,7 @@ const useFilter = (options = {}) => {
   const operations = reactive(useOperation(options.operations || []).operations)
 
   // 筛选条件的值,筛选条件的值的初始化
-  const filterParams = reactive({})
+  const filterParams = reactive({...options.filterParams} || {})
 
   return {
     operations,

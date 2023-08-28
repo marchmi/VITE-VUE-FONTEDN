@@ -16,7 +16,7 @@
    })
    
  
-   // 分页插件内部会触发第一次列表查询
+  // 分页插件内部会触发第一次列表查询
    const handleSearch = async (params = {...filterVal}) => {
      filterVal = {...params}
      const query = {...filterVal, ...pagination}
@@ -27,18 +27,18 @@
      })
    }
  
-   const handleReset = (params, refFom) => {
-     filterVal = {...params}
-     refFom.resetFields()
-   }
+  const handleReset = (params, refFom) => { 
+    refFom.resetFields()
+    handleSearch(params)
+  }
    
  
-   return {
-     tableData,
-     pagination,
-     handleSearch,
-     handleReset
-   }
- }
- export default usePage
+  return {
+    tableData,
+    pagination,
+    handleSearch,
+    handleReset
+  }
+}
+export default usePage
  
