@@ -119,11 +119,11 @@
   }
 
   // 定义emit方法，ref访问子组件方法的形式失效，采用emit
-  const emit = defineEmits(['inited'])
+  const emit = defineEmits(['initd'])
 
-  // 视图挂载后向父组件提交inited事件
+  // 视图挂载后向父组件提交initd事件
   onMounted(()=>{
-    emit('inited', updateDialogFooterDomRef)
+    emit('initd', updateDialogFooterDomRef)
   })
 
 </script>

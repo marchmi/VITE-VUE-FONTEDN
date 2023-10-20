@@ -116,4 +116,10 @@ export const debounce = (fn, delay) => {
   };
 }
 
+let Id = 1
+
+export const getIncreaseID = () => {
+  return ++Id
+}
+
 export const Storage = window.localStorage

@@ -10,7 +10,7 @@
       <div class="dialog-content" :style="{ height: componentState.dialogFullscreen ? '70vh' : '55vh' }">
         <app-main class="dialog">
           <template #content>
-            <m-form v-bind="formAttrs" @inited="inited" v-model:data-form-params="formAttrs.dataFormParams">
+            <m-form v-bind="formAttrs" @initd="initd" v-model:data-form-params="formAttrs.dataFormParams">
             <!-- 向子组件分发插槽内容 -->
               <template v-for="(index, name) in $slots" v-slot:[name]="props">
                 <slot :name="name" v-bind="props" />
@@ -20,7 +20,7 @@
         </app-main>
       </div>
       <template #footer>
-        <div id="dialog-footer">
+        <div :id="`dialog-footer-${increaseId}`">
         </div>
     </template>
     </mi-dialog>
@@ -33,7 +33,9 @@
   import FullScreenIcon from './dialogFullScreenIcon'
   import useComponentStateStore from '@/store/modules/componentState'
   import useForm from '@/components/hooks/useForm'
+  import { getIncreaseID } from '@/utils'
   const componentState = useComponentStateStore()
+  const increaseId = getIncreaseID()
   const props = defineProps({
     trigger: { // 弹窗触发按钮的文本
       type: String,
@@ -113,11 +115,11 @@
   })
 
   /**
-   * MForm组件inited函数回调
+   * MForm组件initd函数回调
    * 用于指定MForm组件中的操作按钮的显示位置
    */
-  const inited = (callback) => {
-    callback('#dialog-footer')
+  const initd = (callback) => {
+    callback(`#dialog-footer-${increaseId}`)
   }
 
 </script>
