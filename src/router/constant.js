@@ -22,4 +22,6 @@
 
 // 菜单名称
 export const RouteMenuTitles = {
+  dashboard: '首页',
+  dashboardPage: '控制台'
 }

@@ -61,7 +61,7 @@ class GeneratorRouteClass {
   getRouteName () {
     const { fileName, folderName } = this
     if (fileName === 'index' || fileName === 'Index') { // 文件名为index时，路由名称为文件所处的文件夹名称
-      return folderName
+      return `${folderName}Page`
     }
   
     if (combinedFileGather.includes(fileName)) { // 详情页，新增页面等，路由名称为文件所处的文件夹名称加首字母大写的文件名称
@@ -114,10 +114,10 @@ function routeMapRegister (files, routes = {}) {
     const path = key.replace(/(.vue)/g, '').replace('../views/', '')
     const file = files[key]
     const routeName = path.split('/')[0]
-    if (!routes[`${routeName}Menu`]) { // 初始化第一层的route对象
+    if (!routes[routeName]) { // 初始化第一层的route对象
       routes[routeName] = {
         path: `/${routeName}`,
-        name: `${routeName}Menu`,
+        name: routeName,
         meta: { title: RouteMenuTitles[routeName] || routeName, sort: routeSortGather.indexOf(routeName) === -1 ? 1000 : routeSortGather.indexOf(routeName) },
         component: Layout,
         children: []
