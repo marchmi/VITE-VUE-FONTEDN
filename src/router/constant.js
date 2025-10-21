@@ -9,7 +9,9 @@
   * 如查找到dashboard在数组中的下标是0，则dashboard的sort属性取值为0
   */
  export const routeSortGather = [
-  'dashboard', // 'Dasshboard'
+  'dashboard', // 'Dasshboard',
+  'supabasePage',
+  'Create'
  ]
  
  // 需要和文件夹名称拼接name属性的文件名
@@ -23,5 +25,8 @@
 // 菜单名称
 export const RouteMenuTitles = {
   dashboard: '首页',
-  dashboardPage: '控制台'
+  dashboardPage: '控制台',
+  usage: 'Doc',
+  supabase: '',
+  supabasePage: ''
 }
