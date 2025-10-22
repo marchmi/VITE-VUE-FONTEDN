@@ -10,8 +10,8 @@
   */
  export const routeSortGather = [
   'dashboard', // 'Dasshboard',
-  'supabasePage',
-  'Create'
+  'Form',
+  'supabasePage'
  ]
  
  // 需要和文件夹名称拼接name属性的文件名
@@ -26,7 +26,7 @@
 export const RouteMenuTitles = {
   dashboard: '首页',
   dashboardPage: '控制台',
-  usage: 'Doc',
-  supabase: '',
-  supabasePage: ''
+  usage: '示例',
+  Form: '表单及弹窗',
+  supabasePage: '增删改查'
 }
