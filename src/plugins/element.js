@@ -89,5 +89,7 @@ export default (app) => {
   coms.map(c => {
     app.component(c.name.replace('El', "Mi")
     , c)
+    app.component(c.name
+    , c)
   })
 }
