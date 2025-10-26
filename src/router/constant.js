@@ -11,6 +11,7 @@
  export const routeSortGather = [
   'dashboard', // 'Dasshboard',
   'Form',
+  'List',
   'supabasePage'
  ]
  
@@ -28,5 +29,6 @@ export const RouteMenuTitles = {
   dashboardPage: '控制台',
   usage: '示例',
   Form: '表单及弹窗',
+  List: '数据列表及分页',
   supabasePage: '增删改查'
 }
