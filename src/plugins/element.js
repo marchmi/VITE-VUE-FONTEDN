@@ -5,6 +5,7 @@
  * 按需加载当前项目中使用到的组件并，组件重命名；使切换ui库时项目中组件所使用的标签名能够保持统一
  */
  import {
+  ElAffix,
   ElButton,
   ElInput,
   ElRadio,
@@ -46,6 +47,7 @@
 import 'element-plus/dist/index.css'
 
 const coms = [
+  ElAffix,
   ElButton,
   ElInput,
   ElRadio,

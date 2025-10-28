@@ -49,6 +49,7 @@ export const supabase = createClient(
           // —— 响应拦截 —— //
           if (!res.ok) {
             const body = await res.json()
+            endLoading()
             errorMsg(body.message || 'Server error')
             throw new Error(body.message)
           }
